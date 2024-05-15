@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.lab2.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <!-- Input Fields for Student Details -->
+    <HBox spacing="10">
+        <Label text="ID:"/>
+        <TextField fx:id="studentId" promptText="Enter Student ID"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Name:"/>
+        <TextField fx:id="studentName" promptText="Enter Student Name"/>
+    </HBox>
+    <HBox spacing="10">
+        <Label text="Major:"/>
+        <TextField fx:id="studentMajor" promptText="Enter Student Major"/>
+    </HBox>
+
+    <!-- Table to Display Students -->
+    <TableView fx:id="tableView">
+        <columns>
+            <TableColumn fx:id="columnId" text="ID" minWidth="75.0" prefWidth="75.0"/>
+            <TableColumn fx:id="columnName" text="Name" minWidth="150.0" prefWidth="150.0"/>
+            <TableColumn fx:id="columnMajor" text="Major" minWidth="150.0" prefWidth="150.0"/>
+        </columns>
+    </TableView>
+
+
+    <!-- Buttons for Adding and Deleting Students -->
+    <HBox spacing="10">
+        <Button text="Add" onAction="#addStudent"/>
+        <Button text="Delete" onAction="#deleteStudent"/>
+    </HBox>
+</VBox>
