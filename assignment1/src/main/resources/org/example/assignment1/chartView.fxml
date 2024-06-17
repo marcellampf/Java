@@ -1,0 +1,38 @@
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.assignment1.HelloController">
+    <VBox spacing="10.0" fx:id="chartContainer">
+        <BarChart fx:id="barChart" title="Video Game Sales">
+            <xAxis>
+                <CategoryAxis label="Game" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis label="Sales (millions)" />
+            </yAxis>
+        </BarChart>
+        <TableView fx:id="tableView" visible="false">
+            <columns>
+                <TableColumn fx:id="titleColumn" text="Title" />
+                <TableColumn fx:id="platformColumn" text="Platform" />
+                <TableColumn fx:id="yearColumn" text="Year" />
+                <TableColumn fx:id="genreColumn" text="Genre" />
+                <TableColumn fx:id="publisherColumn" text="Publisher" />
+                <TableColumn fx:id="salesColumn" text="Sales" />
+            </columns>
+        </TableView>
+        <HBox spacing="10.0">
+            <Label text="Year:"/>
+            <TextField fx:id="yearField" disable="true"/>
+            <Button text="Load by Year" onAction="#loadChartDataByYear"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <CheckBox fx:id="yearCheckBox" text="Year" onAction="#toggleYear"/>
+        </HBox>
+        <HBox spacing="10.0">
+            <Button text="Switch to Table View" onAction="#switchToTableView"/>
+            <Button text="Switch to Chart View" onAction="#switchToChartView" visible="false" fx:id="switchToChartViewButton"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

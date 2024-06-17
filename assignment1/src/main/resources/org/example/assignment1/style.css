@@ -1,0 +1,7 @@
+.bar-chart {
+    -fx-bar-fill: rgba(172, 52, 219, 0.89);
+}
+
+.chart-legend-item-symbol {
+    -fx-bar-fill: #cc602e;
+}
