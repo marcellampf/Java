@@ -1,28 +1,30 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?> <!-- XML declaration indicating version and encoding -->
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?> <!-- Importing the Insets class for defining margins and spacing -->
+<?import javafx.scene.control.Button?> <!-- Importing the Button class for creating buttons -->
+<?import javafx.scene.control.Label?> <!-- Importing the Label class for creating text labels -->
+<?import javafx.scene.control.ScrollPane?> <!-- Importing the ScrollPane class for enabling scrolling of content -->
+<?import javafx.scene.control.TextField?> <!-- Importing the TextField class for text input fields -->
+<?import javafx.scene.image.ImageView?> <!-- Importing the ImageView class for displaying images -->
+<?import javafx.scene.layout.BorderPane?> <!-- Importing the BorderPane class for border layout -->
+<?import javafx.scene.layout.GridPane?> <!-- Importing the GridPane class for grid layout -->
+<?import javafx.scene.layout.VBox?> <!-- Importing the VBox class for vertical layout -->
 
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.assignment3.PokemonView">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.assignment3.PokemonView"> <!-- Main layout with a specified controller -->
     <center>
-        <VBox alignment="CENTER" spacing="20.0">
-            <Label text="Enter Pokemon Name or Number:"/>
-            <TextField fx:id="pokemonNameField"/>
-            <Button text="Get Pokemon Info" onAction="#handleGetPokemonInfo"/>
-            <GridPane fx:id="pokemonInfoGrid" hgap="10" vgap="10" visible="false" style="-fx-border-color: black; -fx-padding: 10;">
+        <VBox alignment="CENTER" spacing="20.0"> <!-- Vertical container with centered alignment and spacing between elements -->
+            <Label text="Enter Pokemon Name or Number:"/> <!-- Label prompting the user to enter the Pokémon name or number -->
+            <TextField fx:id="pokemonNameField"/> <!-- Text field where the user enters the Pokémon name or number -->
+            <Button text="Get Pokemon Info" onAction="#handleGetPokemonInfo"/> <!-- Button that triggers the action to get Pokémon info -->
+            <ImageView fx:id="pokemonImageView" visible="false" fitWidth="200" fitHeight="200"/> <!-- Image view to display Pokémon image, initially hidden -->
+            <GridPane fx:id="pokemonInfoGrid" hgap="10" vgap="10" visible="false" style="-fx-border-color: black; -fx-padding: 10;"> <!-- Grid pane for displaying Pokémon info, initially hidden -->
                 <padding>
-                    <Insets top="10" right="10" bottom="10" left="10"/>
+                    <Insets top="10" right="10" bottom="10" left="10"/> <!-- Padding around the grid pane -->
                 </padding>
             </GridPane>
-            <Label text="Attacks:" fx:id="attacksLabel" visible="false"/>
-            <ScrollPane fx:id="movesScrollPane" fitToWidth="true" visible="false" prefHeight="200">
-                <VBox fx:id="movesContainer" spacing="5" style="-fx-padding: 10;"/>
+            <Label text="Attacks:" fx:id="attacksLabel" visible="false"/> <!-- Label for attacks, initially hidden -->
+            <ScrollPane fx:id="movesScrollPane" fitToWidth="true" visible="false" prefHeight="200"> <!-- Scroll pane for listing moves, initially hidden -->
+                <VBox fx:id="movesContainer" spacing="5" style="-fx-padding: 10;"/> <!-- Vertical box inside the scroll pane for listing moves -->
             </ScrollPane>
         </VBox>
     </center>

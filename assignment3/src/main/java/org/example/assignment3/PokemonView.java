@@ -1,9 +1,13 @@
+
+
 package org.example.assignment3;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
@@ -26,6 +30,9 @@ public class PokemonView {
     @FXML
     private Label attacksLabel;
 
+    @FXML
+    private ImageView pokemonImageView; // Add ImageView for Pokemon image
+
     private final PokemonController pokemonController = new PokemonController();
 
     @FXML
@@ -36,6 +43,7 @@ public class PokemonView {
         movesContainer.getChildren().clear(); // Clear previous moves
         movesScrollPane.setVisible(false); // Hide ScrollPane initially
         attacksLabel.setVisible(false); // Hide Attacks label initially
+        pokemonImageView.setVisible(false); // Hide ImageView initially
 
         if (!pokemonNameOrNumber.isEmpty()) {
             try {
@@ -70,6 +78,13 @@ public class PokemonView {
                 }
                 attacksLabel.setVisible(true); // Show Attacks label
                 movesScrollPane.setVisible(true); // Show ScrollPane after adding moves
+
+                // Display Pokemon image
+                if (pokemon.getSprites() != null && pokemon.getSprites().getFrontDefault() != null) {
+                    Image pokemonImage = new Image(pokemon.getSprites().getFrontDefault());
+                    pokemonImageView.setImage(pokemonImage);
+                    pokemonImageView.setVisible(true);
+                }
 
                 pokemonInfoGrid.setVisible(true); // Show GridPane after adding data
 
@@ -107,3 +122,4 @@ public class PokemonView {
         pokemonInfoGrid.getChildren().addAll(propertyText, valueText);
     }
 }
+
